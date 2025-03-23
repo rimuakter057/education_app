@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../features/ui/screens/main_screen/main_screen.dart';
+
 
 class EducationApp extends StatelessWidget {
   const EducationApp({super.key});
@@ -8,7 +10,7 @@ class EducationApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home:Scaffold(),
+      home:MainScreen(),
     );
   }
 }
