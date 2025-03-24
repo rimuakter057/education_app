@@ -32,8 +32,10 @@ class AppSizes {
 
   ///main screen body section
   static double containerHeightLg(BuildContext context) => MediaQuery.of(context).size.height *  0.22;
-  static double opCoHeight(BuildContext context) => MediaQuery.of(context).size.height *  0.12;
+  static double opCoHeight(BuildContext context) => MediaQuery.of(context).size.width *  0.2;
   static double containerHeightMd(BuildContext context) => MediaQuery.of(context).size.width *  0.3;
+  static double containerHeightSm(BuildContext context) => MediaQuery.of(context).size.width *  0.1;
+  static double containerWidthSm(BuildContext context) => MediaQuery.of(context).size.width *  0.3;
 
 
 
@@ -47,6 +49,8 @@ class AppSizes {
   ///border radius
   static double borderRadiusSm(BuildContext context) => MediaQuery.of(context).size.width * 0.018;
   static double borderRadiusMd(BuildContext context) => MediaQuery.of(context).size.width * 0.045;
+  static double borderRadiusLg(BuildContext context) => MediaQuery.of(context).size.width * 0.05;
+  static double borderRadiusXl(BuildContext context) => MediaQuery.of(context).size.width * 0.07;
 
 
   /// Padding and margin size
@@ -64,7 +68,7 @@ class AppSizes {
   static double imageLg(BuildContext context) => MediaQuery.of(context).size.width * 0.08;
 
   /// Font sizes
-  static double fontSizeSm(BuildContext context) => MediaQuery.of(context).size.width * 0.02;
+  static double fontSizeSm(BuildContext context) => MediaQuery.of(context).size.width * 0.03;
   static double fontSizeMd(BuildContext context) => MediaQuery.of(context).size.width * 0.035;
   static double fontSizeLg(BuildContext context) => MediaQuery.of(context).size.width * 0.05;
 
@@ -77,11 +81,10 @@ class AppSizes {
   /// Default spacing
   static double defaultPadding(BuildContext context) => MediaQuery.of(context).size.height * 0.03;
   static double spaceBthItems(BuildContext context) => MediaQuery.of(context).size.height * 0.018;
-  static double defaultBtwSections(BuildContext context) => MediaQuery.of(context).size.height * 0.04;
+  static double spaceBtwSections(BuildContext context) => MediaQuery.of(context).size.height * 0.04;
   static double spaceBtwItems(BuildContext context) => MediaQuery.of(context).size.width * 0.018;
+  static double spaceWTwoItems(BuildContext context) => MediaQuery.of(context).size.width * 0.08;
 
-  /// Border radius
- static double borderRadiusLg(BuildContext context) => MediaQuery.of(context).size.width * 0.03;
 
   /// Divider height
   static double dividerHeight(BuildContext context) => MediaQuery.of(context).size.height * 0.001;

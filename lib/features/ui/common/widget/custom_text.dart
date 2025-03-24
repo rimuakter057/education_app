@@ -22,7 +22,7 @@ class CustomText extends StatelessWidget {
       maxLines: maxLines??1,
       overflow: TextOverflow.ellipsis,
       text,
-      style: textStyle ??AppTextStyle.commonTextStyle(context)
+      style: textStyle ??AppTextStyle.textStyleMd(context)
 
     );
   }

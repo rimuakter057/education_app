@@ -30,36 +30,34 @@ class OptionContainer extends StatelessWidget {
           child: Padding(
             padding: EdgeInsets.all(AppSizes.spaceBtwItems(context)),
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment:  CrossAxisAlignment.center,
               children: [
-                  Image.asset(imageUrl,
-                    height: AppSizes.imageMd(context),
-                    width: AppSizes.imageMd(context),
-                    fit: BoxFit.contain,
-                  ),
-                  //  SizedBox(width:AppSizes.spaceBtwItems(context) ,),
-                  Flexible(
-                    child: Align(
-                      alignment: Alignment.center,
-                      child: SizedBox(
-                          height: AppSizes.opCoHeight(context),
-                        child: SingleChildScrollView(
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              CustomText(text: titleText),
-                              CustomText(
-                                textAlign: TextAlign.start,
-                                maxLines: 2,
-                                text: subtitleText,
-                                textStyle: AppTextStyle.secondaryTextStyle(context),
-                              ),
-                            ],),
-                        )
-                      ),
-                    
+                  Expanded(
+                    child: Image.asset(imageUrl,
+                      height: AppSizes.imageMd(context),
+                      width: AppSizes.imageMd(context),
+                      fit: BoxFit.contain,
                     ),
+                  ),
+                SizedBox(width:AppSizes.spaceWTwoItems(context) ,),
+                  SizedBox(
+                      height: AppSizes.opCoHeight(context),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start, // Align column items at the start
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Expanded(child: CustomText(text: titleText)),
+                        Expanded(
+                          child: CustomText(
+                            textAlign: TextAlign.start,
+                            maxLines: 2,
+                            text: subtitleText,
+                            textStyle: AppTextStyle.secondaryTextStyle(context),
+                          ),
+                        ),
+                      ],
+                    )
                   ),
                 ],),
           )),

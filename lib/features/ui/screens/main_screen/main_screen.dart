@@ -1,3 +1,4 @@
+import 'package:education_app/app/utils/asset_path.dart';
 import 'package:education_app/app/utils/color/app_colors.dart';
 import 'package:education_app/app/utils/text/app_size.dart';
 import 'package:education_app/app/utils/text/app_text_bn.dart';
@@ -22,7 +23,7 @@ class _MainScreenState extends State<MainScreen> {
   @override
   Widget build(BuildContext context) {
     Widget gap= SizedBox(
-      height: AppSizes.defaultBtwSections(context),
+      height: AppSizes.spaceBtwSections(context),
     );
     return Scaffold(
       appBar: CustomAppBar(title: AppTextBn.flutterAcademy,icon: Icons.sunny,),
@@ -51,6 +52,7 @@ class _MainScreenState extends State<MainScreen> {
   /// choose your option
   Column _buildOptionItem(Widget gap, BuildContext context) {
     return Column(
+
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 gap,
@@ -60,7 +62,7 @@ class _MainScreenState extends State<MainScreen> {
                 ),
                 gap,
                 OptionContainer(boarderColor: AppColors.yellow,
-                  imageUrl: "assets/images/icons/dart_icon.jpg",
+                  imageUrl:  AssetImagePath.dartIcon,
                   titleText: AppTextBn.bangladeshCommunity,
                   subtitleText: AppTextBn.contactFlutterDevelopers,
                 ),
@@ -71,7 +73,7 @@ class _MainScreenState extends State<MainScreen> {
                 ),
                 gap,
                 OptionContainer(boarderColor: AppColors.red,
-                    imageUrl: "assets/images/icons/dart_icon.jpg",
+                    imageUrl: AssetImagePath.dartIcon,
                     titleText: AppTextBn.videosCourse,
                     subtitleText: AppTextBn.watchVideoTutorial
                 ),
@@ -84,7 +86,7 @@ class _MainScreenState extends State<MainScreen> {
                 DividerWidget(),
                 gap,
                 OptionContainer(boarderColor: AppColors.orange,
-                  imageUrl: "assets/images/icons/dart_icon.jpg",
+                  imageUrl:  AssetImagePath.dartIcon,
                   titleText: AppTextBn.codingChallenges,
                   subtitleText: AppTextBn.codingChallenges,
                 ),
@@ -95,7 +97,7 @@ class _MainScreenState extends State<MainScreen> {
                 ),
                 gap,
                 OptionContainer(boarderColor: AppColors.yellow,
-                  imageUrl: "assets/images/icons/dart_icon.jpg",
+                  imageUrl:  AssetImagePath.dartIcon,
                   titleText: AppTextBn.flutterAndDartQuiz,
                   subtitleText: AppTextBn.contactFlutterDevelopers,
                 ),
@@ -106,7 +108,7 @@ class _MainScreenState extends State<MainScreen> {
                 ),
                 gap,
                 OptionContainer(boarderColor: AppColors.orange,
-                  imageUrl: "assets/images/icons/dart_icon.jpg",
+                  imageUrl: AssetImagePath.dartIcon,
                   titleText: AppTextBn.interviewPreparation,
                   subtitleText: AppTextBn.contactFlutterDevelopers,
                 ),
@@ -119,13 +121,13 @@ class _MainScreenState extends State<MainScreen> {
     return Row(
               children: [
                 DocContainer(
-                  imageUrl: "assets/images/icons/flutter_icon.jpg",
+                  imageUrl: AssetImagePath.flutterIcon,
                   titleText: AppTextBn.flutter,
                   subtitleText: AppTextBn.documentation,
                 ),
                 SizedBox(width: 8,),
                 DocContainer(
-                  imageUrl: "assets/images/icons/dart_icon.jpg",
+                  imageUrl: AssetImagePath.dartIcon,
                   titleText: AppTextBn.dart,
                   subtitleText: AppTextBn.documentation,
                 ),

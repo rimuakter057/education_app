@@ -13,6 +13,7 @@ class AppColors {
   static const Color indigo = Color(0xFF3F51B5); // Indigo
   static const Color purple = Color(0xFF9C27B0); // Purple
   static const Color yellow = Color(0xFFFFEB3B); // Yellow
+
   static const Color red = Color(0xFFF44336); // Red
   static const Color orange = Color(0xFFFF9800); // Orange
   static const Color grey = Color(0xFF9E9E9E); // Grey
@@ -20,6 +21,7 @@ class AppColors {
   static const Color white = Color(0xFFFFFFFF); // White
   static const Color pink = Color(0xFFE91E63); // Pink
   static const Color amber = Color(0xFFFFC107); // Amber
+  static const Color amberShade = Color(0xFFFFECB3);
   static const Color lime = Color(0xFFCDDC39); // Lime
 
   // Background Colors
