@@ -7,7 +7,7 @@ class AppGradients {
 
   //primary gradient
   static LinearGradient primaryGradient = LinearGradient(
-    colors: [AppColors.gradientStartColor, AppColors.gradientStartColor,], // Blue and Lavender (Lilac)
+    colors: [AppColors.gradientStartColor, AppColors.gradientEndColor,], // Blue and Lavender (Lilac)
     begin: Alignment.topLeft,
     end: Alignment.bottomRight,
     stops: const [0.0, 0.80],

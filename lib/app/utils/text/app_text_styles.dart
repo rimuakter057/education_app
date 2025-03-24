@@ -1,12 +1,18 @@
 import 'package:education_app/app/utils/color/app_colors.dart';
-import 'package:education_app/app/utils/text/text_size.dart';
+import 'package:education_app/app/utils/text/app_size.dart';
 import 'package:flutter/material.dart';
 
 class AppTextStyle {
   AppTextStyle._(); // Private constructor
 
   ///drawer section
-  static TextStyle drawerTextStyle(BuildContext context, {double? customFontSize, Color? customColor,FontWeight? fontWeight}) {
+  static TextStyle titleTextStyle(
+    BuildContext context, {
+    double? customFontSize,
+    Color? customColor,
+    FontWeight? fontWeight,
+    double? fontSize,
+  }) {
     double fontSize = AppSizes.drawerTextSize(context);
     fontSize = customFontSize ?? fontSize;
     Color textColor = customColor ?? AppColors.black;
@@ -19,12 +25,14 @@ class AppTextStyle {
     );
   }
 
-
-
-
-
-
-
+  /// common text style
+  static TextStyle commonTextStyle(BuildContext context) {
+    return TextStyle(
+      fontSize: AppSizes.fontSizeMd(context),
+      fontWeight: FontWeight.normal,
+      color: AppColors.black,
+    );
+  }
 
   static TextStyle title(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;

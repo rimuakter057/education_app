@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 class AppColors {
   // Gradient color
-  static const Color gradientStartColor = Color(0xFF2196F3); // Blue
-  static const Color gradientEndColor = Color(0xFFB57EDC); // Indigo
+  static const Color gradientStartColor = Color(0xFF2196F3); //blue
+  static const Color gradientEndColor =  Color(0xFFBA68C8); // purple shade300
 
 
 

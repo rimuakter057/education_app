@@ -1,4 +1,4 @@
-import 'package:education_app/features/ui/screens/main_screen/widget/my_drawer.dart';
+import 'package:education_app/features/ui/screens/main_screen/widget/drawer/my_drawer.dart';
 import 'package:flutter/material.dart';
 
 

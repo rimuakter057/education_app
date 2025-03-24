@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 class AppSizes {
+
   /// drawer header section size
   static double minCircleSize(BuildContext context) => MediaQuery.of(context).size.width * 0.02;
   static double maxCircleSize(BuildContext context) => MediaQuery.of(context).size.width * 0.1;
@@ -15,15 +16,18 @@ class AppSizes {
   static double getCircleRadius(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
     // Minimum and maximum circle radius
-    double minCircleSize = screenWidth * 0.08;
-    double maxCircleSize = screenWidth * 0.15;
+    double minCircleSize = screenWidth * 0.03;
+    double maxCircleSize = screenWidth * 0.1;
     // Default circle radius
-    double currentCircleSize = screenWidth * 0.1;
+    double currentCircleSize = screenWidth * 0.06;
     // Constrain circle size within min and max limits
     return currentCircleSize.clamp(minCircleSize, maxCircleSize);
   }
 
-  // Padding and margin size
+
+
+
+  /// Padding and margin size
   static double sm(BuildContext context) => MediaQuery.of(context).size.width * 0.02;
   static double md(BuildContext context) => MediaQuery.of(context).size.width * 0.04;
   static double lg(BuildContext context) => MediaQuery.of(context).size.width * 0.06;
@@ -35,7 +39,7 @@ class AppSizes {
   static double iconMd(BuildContext context) => MediaQuery.of(context).size.width * 0.06;
   static double iconLg(BuildContext context) => MediaQuery.of(context).size.width * 0.08;
 
-  // Font sizes
+  /// Font sizes
   static double fontSizeSm(BuildContext context) => MediaQuery.of(context).size.height * 0.018;
   static double fontSizeMd(BuildContext context) => MediaQuery.of(context).size.height * 0.022;
   static double fontSizeLg(BuildContext context) => MediaQuery.of(context).size.height * 0.025;
@@ -60,7 +64,7 @@ class AppSizes {
 
   // Border radius
   static double borderRadiusSm(BuildContext context) => MediaQuery.of(context).size.width * 0.015;
-  static double borderRadiusMd(BuildContext context) => MediaQuery.of(context).size.width * 0.02;
+  static double borderRadiusMd(BuildContext context) => MediaQuery.of(context).size.width * 0.045;
   static double borderRadiusLg(BuildContext context) => MediaQuery.of(context).size.width * 0.03;
 
   // Divider height
