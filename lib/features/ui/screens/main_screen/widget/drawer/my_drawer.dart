@@ -1,3 +1,4 @@
+import 'package:education_app/app/utils/color/app_colors.dart';
 import 'package:education_app/app/utils/text/app_size.dart';
 import 'package:education_app/features/ui/common/widget/Custom_container.dart';
 import 'package:education_app/features/ui/screens/main_screen/widget/drawer/profile_widget.dart';
@@ -13,15 +14,16 @@ class MyDrawer extends StatelessWidget {
   Widget build(BuildContext context) {
 
     return Drawer(
-      child: Column(
+      backgroundColor:AppColors.white,
+          child: Column(
         children: [
           /// Header Section with Gradient and Profile
           CustomContainer(
             width: AppSizes.drawerContainerWidth(context),
             height:AppSizes.drawerContainerHeight(context),
             gradient: AppGradients.primaryGradient,
-            bottomLeft: Radius.circular(AppSizes.borderRadiusMd(context)),
-            bottomRight:Radius.circular(AppSizes.borderRadiusMd(context)),
+            bottomLeft: AppSizes.borderRadiusMd(context),
+            bottomRight: AppSizes.borderRadiusMd(context),
             ///drawer header with profile
             child: _buildDrawerHeader(),
           ),

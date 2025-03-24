@@ -6,33 +6,53 @@ class AppTextStyle {
   AppTextStyle._(); // Private constructor
 
   ///drawer section
-  static TextStyle titleTextStyle(
+  static TextStyle headerTextStyle(
     BuildContext context, {
-    double? customFontSize,
-    Color? customColor,
+    double? textFontSize,
+    Color? textColor,
     FontWeight? fontWeight,
     double? fontSize,
   }) {
-    double fontSize = AppSizes.drawerTextSize(context);
-    fontSize = customFontSize ?? fontSize;
-    Color textColor = customColor ?? AppColors.black;
+    double fontSize = AppSizes.headerTextSize(context);
+    fontSize = textFontSize ?? fontSize;
+    Color myTextColor = textColor ?? AppColors.black;
     fontWeight = fontWeight ?? FontWeight.bold;
 
     return TextStyle(
       fontSize: fontSize,
       fontWeight: fontWeight,
-      color: textColor,
+      color: myTextColor,
     );
   }
 
   /// common text style
   static TextStyle commonTextStyle(BuildContext context) {
     return TextStyle(
-      fontSize: AppSizes.fontSizeMd(context),
-      fontWeight: FontWeight.normal,
+      fontSize: AppSizes.fontSizeLg(context),
+      fontWeight: FontWeight.bold,
       color: AppColors.black,
     );
   }
+
+  ///secondary text style
+  static TextStyle secondaryTextStyle(BuildContext context) {
+    return TextStyle(
+      fontSize: AppSizes.fontSizeMd(context),
+      fontWeight: FontWeight.w400,
+      color: AppColors.grey,
+    );
+  }
+
+  ///appbar text style
+  static TextStyle appbarTextStyle(BuildContext context) {
+    return TextStyle(
+      fontSize: AppSizes.fontSizeLg(context),
+      fontWeight: FontWeight.bold,
+      color: AppColors.white,
+    );
+  }
+
+
 
   static TextStyle title(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;

@@ -4,7 +4,8 @@ class AppColors {
   // Gradient color
   static const Color gradientStartColor = Color(0xFF2196F3); //blue
   static const Color gradientEndColor =  Color(0xFFBA68C8); // purple shade300
-
+  static const Color dividerColor = Color(0xFFE0E0E0);
+  static const Color secondaryTextColor = Color(0xFFEEEEEE);
 
 
   // Primary Colors

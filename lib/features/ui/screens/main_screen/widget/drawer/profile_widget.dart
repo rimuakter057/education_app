@@ -25,17 +25,17 @@ class ProfileWidget extends StatelessWidget {
             children: [
               CustomText(
                 text: 'Your Name',
-                textStyle: AppTextStyle.titleTextStyle(
+                textStyle: AppTextStyle.headerTextStyle(
                   context,
-                  customColor: AppColors.white,
+                  textColor: AppColors.white,
                 ),
               ),
               SizedBox(height: 5),
               CustomText(
                 text: 'example33@gmail.com',
-                textStyle: AppTextStyle.titleTextStyle(
+                textStyle: AppTextStyle.headerTextStyle(
                   context,
-                  customColor: AppColors.grey,
+                  textColor: AppColors.grey,
                   fontWeight: FontWeight.w400,
                    fontSize: AppSizes.fontSizeSm(context),
                 ),

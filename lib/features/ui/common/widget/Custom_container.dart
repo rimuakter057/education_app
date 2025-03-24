@@ -1,6 +1,7 @@
+import 'package:education_app/app/utils/color/app_colors.dart';
 import 'package:flutter/material.dart';
 
-// Custom Container Widget
+/// Custom Container Widget
 class CustomContainer extends StatelessWidget {
   final double? height;
   final double? width;
@@ -12,10 +13,12 @@ class CustomContainer extends StatelessWidget {
   final Color? containerColor;
   final Color? borderColor;
   final Gradient? gradient;
-  final Radius?  bottomLeft;
-  final Radius?  bottomRight;
-  final Radius?  topLeft;
-  final Radius?  topRight;
+  final List<BoxShadow>? boxShadow;
+  /// Individual corner radius
+  final double? bottomLeft;
+  final double? bottomRight;
+  final double? topLeft;
+  final double? topRight;
 
   const CustomContainer({
     super.key,
@@ -32,7 +35,7 @@ class CustomContainer extends StatelessWidget {
     this.bottomLeft,
     this.bottomRight,
     this.topLeft,
-    this.topRight,
+    this.topRight, this.boxShadow,
   });
 
   @override
@@ -45,17 +48,57 @@ class CustomContainer extends StatelessWidget {
       decoration: BoxDecoration(
         gradient: gradient,
         border: Border.all(
-            color: borderColor?? Colors.transparent,
-            width: borderWidth ?? 0),
-        borderRadius: BorderRadius.only(
-          bottomLeft:bottomLeft?? Radius.circular(0),
-          bottomRight: bottomRight?? Radius.circular(0),
-          topLeft:topLeft?? Radius.circular(0),
-          topRight: topRight?? Radius.circular(0),
+          color: borderColor ?? Colors.transparent,
+          width: borderWidth ?? 0,
         ),
-        color:containerColor ,
+        borderRadius: _getBorderRadius(),
+        color: containerColor??AppColors.white,
+        boxShadow: _getDefaultBoxShadow(),
       ),
       child: child,
     );
   }
+
+  /// boarder radius function
+
+  BorderRadiusGeometry _getBorderRadius() {
+
+    if (borderRadius != null) {
+      return borderRadius!;
+    }
+
+
+    if (bottomLeft != null || bottomRight != null || topLeft != null || topRight != null) {
+      return BorderRadius.only(
+        bottomLeft: Radius.circular(bottomLeft ?? 0),
+        bottomRight: Radius.circular(bottomRight ?? 0),
+        topLeft: Radius.circular(topLeft ?? 0),
+        topRight: Radius.circular(topRight ?? 0),
+      );
+    }
+
+
+    return BorderRadius.zero;
+  }
+
+
+
+  /// Default BoxShadow
+  List<BoxShadow> _getDefaultBoxShadow() {
+    return [
+      BoxShadow(
+        color: AppColors.secondaryTextColor, // Light shadow
+        blurRadius: 8, // Spread of the shadow
+        offset: Offset(100, 4), // Slight downward shadow
+      ),
+    ];
+  }
+
 }
+
+
+
+
+
+
+
