@@ -83,7 +83,7 @@ class AppSizes {
   /// Default spacing
   static double defaultPadding(BuildContext context) => MediaQuery.of(context).size.width * 0.06;
   static double spaceBthItems(BuildContext context) => MediaQuery.of(context).size.height * 0.018;
-  static double spaceBtwSections(BuildContext context) => MediaQuery.of(context).size.height * 0.04;
+  static double spaceBthSections(BuildContext context) => MediaQuery.of(context).size.height * 0.04;
   static double spaceBtwItems(BuildContext context) => MediaQuery.of(context).size.width * 0.018;
   static double spaceWTwoItems(BuildContext context) => MediaQuery.of(context).size.width * 0.08;
   static double sideSpace (BuildContext context) => MediaQuery.of(context).size.height * 0.12;

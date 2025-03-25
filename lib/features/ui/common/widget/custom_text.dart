@@ -19,6 +19,7 @@ class CustomText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Text(
+      softWrap: true,
       textAlign: textAlign,
       maxLines: maxLines ?? 1,
       overflow: TextOverflow.ellipsis,

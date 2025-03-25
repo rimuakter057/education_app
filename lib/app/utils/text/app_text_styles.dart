@@ -6,8 +6,7 @@ class AppTextStyle {
   AppTextStyle._(); // Private constructor
 
   ///drawer section
-  static TextStyle headerTextStyle(
-    BuildContext context, {
+  static TextStyle headerTextStyle(BuildContext context, {
     double? textFontSize,
     Color? textColor,
     FontWeight? fontWeight,
@@ -52,24 +51,34 @@ class AppTextStyle {
     );
   }
 
-///small text style
-  static TextStyle textStyleSm(
-      BuildContext context, {
-        double? textFontSize,
-        Color? textColor,
-        FontWeight? fontWeight,
-        double? fontSize,
-      }) {
-    double fontSize = AppSizes.fontSizeSm(context);
-    fontSize = textFontSize ?? fontSize;
+  ///data text style
+  static TextStyle dataTextStyle(BuildContext context) {
+    return     TextStyle(
+        fontSize: AppSizes.fontSizeMd(context),
+        fontWeight: FontWeight.w500,
+        color: AppColors.black
+    ) ;
+  }
+
+  ///small text style
+  static TextStyle textStyleSm(BuildContext context, {
+    double? textFontSize, // New parameter for custom font size
+    Color? textColor,
+    FontWeight? fontWeight,
+    double? fontSize, // Deprecated or redundant, can be removed
+  }) {
+    // Default font size
+    double defaultFontSize = AppSizes.fontSizeSm(context);
+
+    // If a custom font size is provided, use it; otherwise, fallback to default.
+    double finalFontSize = textFontSize ?? defaultFontSize;
     Color myTextColor = textColor ?? AppColors.black;
     fontWeight = fontWeight ?? FontWeight.bold;
 
     return TextStyle(
-      fontSize: fontSize,
+      fontSize: finalFontSize,
       fontWeight: fontWeight,
       color: myTextColor,
     );
   }
-
 }

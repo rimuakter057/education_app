@@ -22,7 +22,7 @@ class _MainScreenState extends State<MainScreen> {
   @override
   Widget build(BuildContext context) {
     Widget gap= SizedBox(
-      height: AppSizes.spaceBtwSections(context),
+      height: AppSizes.spaceBthSections(context),
     );
     return Scaffold(
       appBar: CustomAppBar(title: AppTextBn.flutterAcademy,icon: Icons.sunny,),
