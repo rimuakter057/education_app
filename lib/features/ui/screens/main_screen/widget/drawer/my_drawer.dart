@@ -12,21 +12,22 @@ class MyDrawer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     return Drawer(
-      backgroundColor:AppColors.white,
-          child: Column(
+      backgroundColor: AppColors.white,
+      child: Column(
         children: [
           /// Header Section with Gradient and Profile
           CustomContainer(
             width: AppSizes.drawerContainerWidth(context),
-            height:AppSizes.drawerContainerHeight(context),
+            height: AppSizes.drawerContainerHeight(context),
             gradient: AppGradients.primaryGradient,
             bottomLeft: AppSizes.borderRadiusMd(context),
             bottomRight: AppSizes.borderRadiusMd(context),
+
             ///drawer header with profile
             child: _buildDrawerHeader(),
           ),
+
           /// Drawer Menu Items with dynamic padding and font sizes
           _buildItemMenu(),
         ],
@@ -36,13 +37,10 @@ class MyDrawer extends StatelessWidget {
 
   ///build drawer header
   DrawerHeader _buildDrawerHeader() {
-    return DrawerHeader(
-            padding: EdgeInsets.all(0),
-            child: ProfileWidget(),
-          );
+    return DrawerHeader(padding: EdgeInsets.all(0), child: ProfileWidget());
   }
 
-///build drawer menu items
+  ///build drawer menu items
   Expanded _buildItemMenu() {
     return Expanded(
       child: ListView.builder(
@@ -50,22 +48,9 @@ class MyDrawer extends StatelessWidget {
         itemCount: drawerItems.length,
         itemBuilder: (context, index) {
           /// drawer item custom list tile implement
-          return DrawerItem(index: index,);
+          return DrawerItem(index: index);
         },
       ),
     );
   }
-  }
-
-
-
-
-
-
-
-
-
-
-
-
-
+}

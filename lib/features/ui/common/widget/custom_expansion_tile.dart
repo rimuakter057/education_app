@@ -72,9 +72,7 @@ class CustomExpansionTile extends StatelessWidget {
               CustomListTile(
                 leading: Icon(Icons.play_circle_outline),
                 title: AppTextEn.variables,
-                subtitle: Text(
-                  AppTextEn.timeFifteen,
-                ),
+                subtitle: Text(AppTextEn.timeFifteen),
                 trailing: Icon(Icons.lock_open_outlined),
               ),
             ],

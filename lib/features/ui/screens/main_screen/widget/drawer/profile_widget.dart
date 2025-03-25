@@ -1,3 +1,4 @@
+import 'package:education_app/app/utils/asset_path.dart';
 import 'package:education_app/app/utils/color/app_colors.dart';
 import 'package:education_app/app/utils/text/app_text_styles.dart';
 import 'package:education_app/app/utils/text/app_size.dart';
@@ -15,7 +16,10 @@ class ProfileWidget extends StatelessWidget {
         Positioned(
           left: MediaQuery.sizeOf(context).width * 0.02,
           bottom: MediaQuery.sizeOf(context).height * 0.08,
-          child: CircleAvatar(radius: AppSizes.getCircleRadius(context)),
+          child: CircleAvatar(
+            radius: AppSizes.getCircleRadius(context),
+            backgroundImage: AssetImage(AssetImagePath.dartIcon),
+          ),
         ),
 
         Positioned(

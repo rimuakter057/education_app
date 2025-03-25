@@ -3,15 +3,11 @@ import 'package:education_app/features/ui/screens/main_screen/function/navigatio
 import 'package:flutter/material.dart';
 import 'drawer_item_list.dart';
 
-
 /// drawer item custom list tile implement
 
 class DrawerItem extends StatelessWidget {
   final int index;
-  const DrawerItem({
-    super.key, required this.index,
-
-  });
+  const DrawerItem({super.key, required this.index});
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +15,7 @@ class DrawerItem extends StatelessWidget {
     return CustomListTile(
       leadingIcon: item['icon'],
       title: item['text'],
-      leadingIconColor:item['color'],
+      leadingIconColor: item['color'],
       onTap: () {
         Navigator.pop(context);
         NavigationUtils.onTapHandler(context, drawerItems[index]['text']);

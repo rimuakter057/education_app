@@ -12,7 +12,7 @@ import 'package:education_app/features/ui/screens/main_screen/widget/drawer/my_d
 import 'package:flutter/material.dart';
 
 class MainScreen extends StatefulWidget {
-  const MainScreen({super.key,});
+  const MainScreen({super.key});
 
   @override
   State<MainScreen> createState() => _MainScreenState();
@@ -21,11 +21,9 @@ class MainScreen extends StatefulWidget {
 class _MainScreenState extends State<MainScreen> {
   @override
   Widget build(BuildContext context) {
-    Widget gap= SizedBox(
-      height: AppSizes.spaceBthSections(context),
-    );
+    Widget gap = SizedBox(height: AppSizes.spaceBthSections(context));
     return Scaffold(
-      appBar: CustomAppBar(title: AppTextBn.flutterAcademy,icon: Icons.sunny,),
+      appBar: CustomAppBar(title: AppTextBn.flutterAcademy, icon: Icons.sunny),
       drawer: MyDrawer(),
       body: SingleChildScrollView(
         child: Padding(
@@ -36,11 +34,16 @@ class _MainScreenState extends State<MainScreen> {
               gap,
               CustomText(
                 text: AppTextBn.documentation,
-                textStyle: AppTextStyle.headerTextStyle(context,textColor: AppColors.blue),
+                textStyle: AppTextStyle.headerTextStyle(
+                  context,
+                  textColor: AppColors.blue,
+                ),
               ),
               gap,
+
               /// read doc container
               _buildDocContainer(),
+
               /// choose your option
               _buildOptionItem(gap, context),
             ],
@@ -53,92 +56,105 @@ class _MainScreenState extends State<MainScreen> {
   /// choose your option
   Column _buildOptionItem(Widget gap, BuildContext context) {
     return Column(
-
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                gap,
-                CustomText(
-                  text: AppTextBn.community,
-                  textStyle: AppTextStyle.headerTextStyle(context,textColor: AppColors.blue),
-                ),
-                gap,
-                OptionContainer(boarderColor: AppColors.yellow,
-                  imageUrl:  AssetImagePath.dartIcon,
-                  titleText: AppTextBn.bangladeshCommunity,
-                  subtitleText: AppTextBn.contactFlutterDevelopers,
-                ),
-                gap,
-                CustomText(
-                  text: AppTextBn.flutterAndDartCourse,
-                  textStyle: AppTextStyle.headerTextStyle(context,textColor: AppColors.blue),
-                ),
-                gap,
-                OptionContainer(boarderColor: AppColors.red,
-                    imageUrl: AssetImagePath.dartIcon,
-                    titleText: AppTextBn.videosCourse,
-                    subtitleText: AppTextBn.watchVideoTutorial
-                ),
-                gap,
-                CustomText(
-                  text: AppTextBn.problemSolving,
-                  textStyle: AppTextStyle.headerTextStyle(context,textColor: AppColors.blue),
-                ),
-                SizedBox(height: AppSizes.spaceBthItems(context),),
-                CustomDivider(),
-                gap,
-                OptionContainer(boarderColor: AppColors.orange,
-                  imageUrl:  AssetImagePath.dartIcon,
-                  titleText: AppTextBn.codingChallenges,
-                  subtitleText: AppTextBn.codingChallenges,
-                ),
-                gap,
-                CustomText(
-                  text: AppTextBn.quiz,
-                  textStyle: AppTextStyle.headerTextStyle(context,textColor: AppColors.blue),
-                ),
-                gap,
-                OptionContainer(boarderColor: AppColors.yellow,
-                  imageUrl:  AssetImagePath.dartIcon,
-                  titleText: AppTextBn.flutterAndDartQuiz,
-                  subtitleText: AppTextBn.contactFlutterDevelopers,
-                ),
-                gap,
-                CustomText(
-                  text: AppTextBn.interviewPreparation,
-                  textStyle: AppTextStyle.headerTextStyle(context,textColor: AppColors.blue),
-                ),
-                gap,
-                OptionContainer(boarderColor: AppColors.orange,
-                  imageUrl: AssetImagePath.dartIcon,
-                  titleText: AppTextBn.interviewPreparation,
-                  subtitleText: AppTextBn.contactFlutterDevelopers,
-                ),
-              ],
-            );
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        gap,
+        CustomText(
+          text: AppTextBn.community,
+          textStyle: AppTextStyle.headerTextStyle(
+            context,
+            textColor: AppColors.blue,
+          ),
+        ),
+        gap,
+        OptionContainer(
+          boarderColor: AppColors.yellow,
+          imageUrl: AssetImagePath.dartIcon,
+          titleText: AppTextBn.bangladeshCommunity,
+          subtitleText: AppTextBn.contactFlutterDevelopers,
+        ),
+        gap,
+        CustomText(
+          text: AppTextBn.flutterAndDartCourse,
+          textStyle: AppTextStyle.headerTextStyle(
+            context,
+            textColor: AppColors.blue,
+          ),
+        ),
+        gap,
+        OptionContainer(
+          boarderColor: AppColors.red,
+          imageUrl: AssetImagePath.dartIcon,
+          titleText: AppTextBn.videosCourse,
+          subtitleText: AppTextBn.watchVideoTutorial,
+        ),
+        gap,
+        CustomText(
+          text: AppTextBn.problemSolving,
+          textStyle: AppTextStyle.headerTextStyle(
+            context,
+            textColor: AppColors.blue,
+          ),
+        ),
+        SizedBox(height: AppSizes.spaceBthItems(context)),
+        CustomDivider(),
+        gap,
+        OptionContainer(
+          boarderColor: AppColors.orange,
+          imageUrl: AssetImagePath.dartIcon,
+          titleText: AppTextBn.codingChallenges,
+          subtitleText: AppTextBn.codingChallenges,
+        ),
+        gap,
+        CustomText(
+          text: AppTextBn.quiz,
+          textStyle: AppTextStyle.headerTextStyle(
+            context,
+            textColor: AppColors.blue,
+          ),
+        ),
+        gap,
+        OptionContainer(
+          boarderColor: AppColors.yellow,
+          imageUrl: AssetImagePath.dartIcon,
+          titleText: AppTextBn.flutterAndDartQuiz,
+          subtitleText: AppTextBn.contactFlutterDevelopers,
+        ),
+        gap,
+        CustomText(
+          text: AppTextBn.interviewPreparation,
+          textStyle: AppTextStyle.headerTextStyle(
+            context,
+            textColor: AppColors.blue,
+          ),
+        ),
+        gap,
+        OptionContainer(
+          boarderColor: AppColors.orange,
+          imageUrl: AssetImagePath.dartIcon,
+          titleText: AppTextBn.interviewPreparation,
+          subtitleText: AppTextBn.contactFlutterDevelopers,
+        ),
+      ],
+    );
   }
 
   /// read doc container
   Row _buildDocContainer() {
     return Row(
-              children: [
-                DocContainer(
-                  imageUrl: AssetImagePath.flutterIcon,
-                  titleText: AppTextBn.flutter,
-                  subtitleText: AppTextBn.documentation,
-                ),
-                SizedBox(width: 8,),
-                DocContainer(
-                  imageUrl: AssetImagePath.dartIcon,
-                  titleText: AppTextBn.dart,
-                  subtitleText: AppTextBn.documentation,
-                ),
-              ],
-            );
+      children: [
+        DocContainer(
+          imageUrl: AssetImagePath.flutterIcon,
+          titleText: AppTextBn.flutter,
+          subtitleText: AppTextBn.documentation,
+        ),
+        SizedBox(width: 8),
+        DocContainer(
+          imageUrl: AssetImagePath.dartIcon,
+          titleText: AppTextBn.dart,
+          subtitleText: AppTextBn.documentation,
+        ),
+      ],
+    );
   }
 }
-
-
-
-
-
-

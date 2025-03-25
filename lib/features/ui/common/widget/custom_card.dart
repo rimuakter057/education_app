@@ -9,23 +9,26 @@ class CustomCard extends StatelessWidget {
   final Widget child;
   final EdgeInsetsGeometry? margin;
   final EdgeInsetsGeometry? padding;
-    final Color?shadowColor;
+  final Color? shadowColor;
   const CustomCard({
     super.key,
     required this.child,
     this.margin,
-    this.padding, this.shadowColor,
+    this.padding,
+    this.shadowColor,
   });
 
   @override
   Widget build(BuildContext context) {
     return Card(
       elevation: 8,
-      shadowColor:shadowColor?? AppColors.secondaryTextColor,
+      shadowColor: shadowColor ?? AppColors.secondaryTextColor,
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(AppSizes.borderRadiusSm(context)), // গোল কোণা
+        borderRadius: BorderRadius.circular(
+          AppSizes.borderRadiusSm(context),
+        ), // গোল কোণা
       ),
-        child: child,
+      child: child,
     );
   }
 }

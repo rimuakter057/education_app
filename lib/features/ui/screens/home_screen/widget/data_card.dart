@@ -41,7 +41,7 @@ class DataCard extends StatelessWidget {
     return SizedBox(
       width: double.infinity,
       child: CustomCard(
-               child: Padding(
+        child: Padding(
           padding: EdgeInsets.all(AppSizes.defaultPadding(context)),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,

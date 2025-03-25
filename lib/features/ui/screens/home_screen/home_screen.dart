@@ -27,17 +27,26 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(title: AppTextEn.dartProgramming,icon: Icons.search,),
+      appBar: CustomAppBar(
+        title: AppTextEn.dartProgramming,
+        icon: Icons.search,
+        leading: CustomIcon(icon: Icons.arrow_back,onTap: (){
+          Navigator.pop(context);
+        },
+        ),
+      ),
       body: SingleChildScrollView(
         child: Column(
           children: [
             Container(
               width: AppSizes.screenWidth(context),
-              height: AppSizes.screenHeight(context) / 3,  // Screen height er 3rd part
+              height:
+                  AppSizes.screenHeight(context) /
+                  3, // Screen height er 3rd part
               decoration: BoxDecoration(
                 image: DecorationImage(
                   image: AssetImage(AssetImagePath.flutterImage),
-                  fit: BoxFit.cover,  // To cover the container area
+                  fit: BoxFit.cover, // To cover the container area
                 ),
               ),
             ),

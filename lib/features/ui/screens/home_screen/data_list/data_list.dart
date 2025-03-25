@@ -1,13 +1,11 @@
-
-
 import 'package:education_app/app/utils/text/app_text_en.dart';
 
 class DataList {
   static final List<String> courseDescription = [
-   AppTextEn.masterDartFundamentals,
-   AppTextEn.understandOOP,
+    AppTextEn.masterDartFundamentals,
+    AppTextEn.understandOOP,
     AppTextEn.asyncProgramming,
-    AppTextEn.buildRealWorldApps
+    AppTextEn.buildRealWorldApps,
   ];
 
   static final List<String> requirements = [
