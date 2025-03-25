@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 
 class AppTextStyle {
   AppTextStyle._(); // Private constructor
-
   ///drawer section
   static TextStyle headerTextStyle(BuildContext context, {
     double? textFontSize,
@@ -12,17 +11,21 @@ class AppTextStyle {
     FontWeight? fontWeight,
     double? fontSize,
   }) {
-    double fontSize = AppSizes.headerTextSize(context);
-    fontSize = textFontSize ?? fontSize;
+
+    double finalSize = AppSizes.headerTextSize(context);
+
+    finalSize = textFontSize ?? finalSize;
+
     Color myTextColor = textColor ?? AppColors.black;
     fontWeight = fontWeight ?? FontWeight.bold;
 
     return TextStyle(
-      fontSize: fontSize,
+      fontSize: finalSize,
       fontWeight: fontWeight,
       color: myTextColor,
     );
   }
+
 
   /// common text style
   static TextStyle textStyleMd(BuildContext context) {

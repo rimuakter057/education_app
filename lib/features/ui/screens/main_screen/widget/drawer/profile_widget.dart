@@ -13,14 +13,14 @@ class ProfileWidget extends StatelessWidget {
     return Stack(
       children: [
         Positioned(
-          left: AppSizes.leftPosition(context),
-          bottom: AppSizes.circleBottomPosition(context),
+          left: MediaQuery.sizeOf(context).width * 0.02,
+          bottom: MediaQuery.sizeOf(context).height * 0.08,
           child: CircleAvatar(radius: AppSizes.getCircleRadius(context)),
         ),
 
         Positioned(
-          left: AppSizes.leftPosition(context),
-          bottom: AppSizes.textBottomPosition(context),
+          left: MediaQuery.sizeOf(context).width * 0.02,
+          bottom: MediaQuery.sizeOf(context).height * 0.008,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -29,16 +29,16 @@ class ProfileWidget extends StatelessWidget {
                 textStyle: AppTextStyle.headerTextStyle(
                   context,
                   textColor: AppColors.white,
+                  textFontSize: MediaQuery.sizeOf(context).height * 0.025,
                 ),
               ),
-              SizedBox(height: 5),
               CustomText(
                 text: 'example33@gmail.com',
                 textStyle: AppTextStyle.headerTextStyle(
                   context,
                   textColor: AppColors.grey,
                   fontWeight: FontWeight.w400,
-                   fontSize: AppSizes.fontSizeSm(context),
+                  textFontSize: MediaQuery.sizeOf(context).height * 0.02,
                 ),
               ),
             ],

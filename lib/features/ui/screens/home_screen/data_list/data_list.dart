@@ -1,16 +1,18 @@
 
 
+import 'package:education_app/app/utils/text/app_text_en.dart';
+
 class DataList {
   static final List<String> courseDescription = [
-    "✓ Master Dart programming fundamentals",
-    "✓ Understand OOP concepts in Dart",
-    "✓ Asynchronous programming with Futures/Streams",
-    "✓ Build real-world applications"
+   AppTextEn.masterDartFundamentals,
+   AppTextEn.understandOOP,
+    AppTextEn.asyncProgramming,
+    AppTextEn.buildRealWorldApps
   ];
 
   static final List<String> requirements = [
-    "Basic programming knowledge",
-    "Windows/Mac/Linux PC",
-    "Dart SDK installed"
+    AppTextEn.basicProgrammingKnowledge,
+    AppTextEn.pcRequirement,
+    AppTextEn.dartSdkInstalled,
   ];
 }

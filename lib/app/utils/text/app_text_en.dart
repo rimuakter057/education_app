@@ -25,4 +25,38 @@ class AppTextEn {
   static const String interviewPreparationSection = 'Interview Preparation';
   static const String settings = 'Settings';
   static const String logout = 'Logout';
+  static const String beginnerFriendly = 'Beginner Friendly';
+  static const String courseDuration = '6h 13min';
+  static const String studentName = 'Rimu Akter';
+  static const String studentStatus = 'I am a student';
+  static const String curriculum = 'Curriculum';
+  static const String details = 'Details';
+  static const String introductionTo = 'Introduction to';
+  static const String lessonsCount = '2 lessons';
+  static const String dartProgramming = 'Dart Programming';
+  static const String advanceDart  = 'Advance Dart';
+  static const String introduction = 'Introduction';
+  static const String variables = 'Variables';
+  static const String courseDescription = 'Course Description';
+  static const String whatYouWillLearn = 'What You\'ll Learn';
+  static const String requirements = 'Requirements';
+
+// Requirements
+  static const String basicProgrammingKnowledge = 'Basic programming knowledge';
+  static const String pcRequirement = 'Windows/Mac/Linux PC';
+  static const String dartSdkInstalled = 'Dart SDK installed';
+
+// Learning Outcomes
+  static const String masterDartFundamentals = '✓ Master Dart programming fundamentals';
+  static const String understandOOP = '✓ Understand OOP concepts in Dart';
+  static const String asyncProgramming = '✓ Asynchronous programming with Futures/Streams';
+  static const String buildRealWorldApps = '✓ Build real-world applications';
+  static const String timeTen = '10:00';
+  static const String timeFifteen = '15:00';
+  static const String timeThirty = '30';
+
+
+
+
+
 }

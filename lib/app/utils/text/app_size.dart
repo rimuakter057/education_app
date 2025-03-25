@@ -11,7 +11,7 @@ class AppSizes {
   static double maxCircleSize(BuildContext context) => MediaQuery.of(context).size.width * 0.1;
   static double currentCircleSize(BuildContext context) => MediaQuery.of(context).size.width * 0.05;
   static double leftPosition(BuildContext context) => MediaQuery.of(context).size.width * 0.05;
-  static double circleBottomPosition(BuildContext context) => MediaQuery.of(context).size.height *  0.1;
+  static double circleBottomPosition(BuildContext context) => MediaQuery.of(context).size.height *  0.05;
   static double textBottomPosition(BuildContext context) => MediaQuery.of(context).size.height *  0.02;
   static double headerTextSize(BuildContext context) => MediaQuery.of(context).size.width *  0.045;
   static double drawerContainerHeight(BuildContext context) => MediaQuery.of(context).size.height *  0.25;
@@ -19,13 +19,13 @@ class AppSizes {
 
   /// Define the min, max, and current circle size as dynamic values
   static double getCircleRadius(BuildContext context) {
-    double screenWidth = MediaQuery.of(context).size.width;
-    // Minimum and maximum circle radius
-    double minCircleSize = screenWidth * 0.03;
-    double maxCircleSize = screenWidth * 0.1;
-    // Default circle radius
-    double currentCircleSize = screenWidth * 0.06;
-    // Constrain circle size within min and max limits
+    double screenHeight = MediaQuery.of(context).size.height;
+
+    double minCircleSize = screenHeight * 0.025;
+    double maxCircleSize = screenHeight * 0.06;
+
+    double currentCircleSize = screenHeight * 0.05;
+
     return currentCircleSize.clamp(minCircleSize, maxCircleSize);
   }
 
