@@ -21,15 +21,19 @@ class CustomListTile extends StatelessWidget {
     this.onTap,
     this.leadingIconColor,
     this.trailing,
-    this.titleStyle, this.leading,
+    this.titleStyle,
+    this.leading,
   });
 
   @override
   Widget build(BuildContext context) {
     return ListTile(
       contentPadding: EdgeInsets.zero,
-      leading:leading?? Icon(leadingIcon, color: leadingIconColor),
-      title:CustomText(text: title!,textStyle:AppTextStyle.headerTextStyle(context),),
+      leading: leading ?? Icon(leadingIcon, color: leadingIconColor),
+      title: CustomText(
+        text: title!,
+        textStyle: AppTextStyle.headerTextStyle(context),
+      ),
       subtitle: subtitle,
       trailing: trailing,
       onTap: onTap,

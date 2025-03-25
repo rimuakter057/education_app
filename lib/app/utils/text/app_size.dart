@@ -34,6 +34,7 @@ class AppSizes {
   static double containerHeightLg(BuildContext context) => MediaQuery.of(context).size.height *  0.22;
   static double opCoHeight(BuildContext context) => MediaQuery.of(context).size.width *  0.2;
   static double containerHeightMd(BuildContext context) => MediaQuery.of(context).size.width *  0.3;
+  static double containerHeightXMd(BuildContext context) => MediaQuery.of(context).size.width *  0.15;
   static double containerHeightSm(BuildContext context) => MediaQuery.of(context).size.width *  0.1;
   static double containerWidthSm(BuildContext context) => MediaQuery.of(context).size.width *  0.3;
 
@@ -55,6 +56,7 @@ class AppSizes {
 
   /// Padding and margin size
   static double lg(BuildContext context) => MediaQuery.of(context).size.width * 0.06;
+  static double smallPadding(BuildContext context) => MediaQuery.of(context).size.width * 0.02;
 
   // Icon sizes
   static double iconXs(BuildContext context) => MediaQuery.of(context).size.width * 0.03;
@@ -79,12 +81,13 @@ class AppSizes {
   static double buttonElevation(BuildContext context) => MediaQuery.of(context).size.width * 0.02;
 
   /// Default spacing
-  static double defaultPadding(BuildContext context) => MediaQuery.of(context).size.height * 0.03;
+  static double defaultPadding(BuildContext context) => MediaQuery.of(context).size.width * 0.06;
   static double spaceBthItems(BuildContext context) => MediaQuery.of(context).size.height * 0.018;
   static double spaceBtwSections(BuildContext context) => MediaQuery.of(context).size.height * 0.04;
   static double spaceBtwItems(BuildContext context) => MediaQuery.of(context).size.width * 0.018;
   static double spaceWTwoItems(BuildContext context) => MediaQuery.of(context).size.width * 0.08;
-
+  static double sideSpace (BuildContext context) => MediaQuery.of(context).size.height * 0.12;
+  static double smallHSpace(BuildContext context) => MediaQuery.of(context).size.height * 0.005;
 
   /// Divider height
   static double dividerHeight(BuildContext context) => MediaQuery.of(context).size.height * 0.001;

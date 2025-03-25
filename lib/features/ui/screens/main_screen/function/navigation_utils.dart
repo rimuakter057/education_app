@@ -9,6 +9,8 @@ import '../../interview_preparation_screen/interview_preparation_screen.dart';
 import '../../quizzesScreen/quizzes_screen.dart';
 import '../../setting_screen/setting_screen.dart';
 
+/// drawer item custom list tile implement navigation using switch case
+
 class NavigationUtils {
   NavigationUtils._();
   static void onTapHandler(BuildContext context, String menuItem) {

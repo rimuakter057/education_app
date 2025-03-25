@@ -3,7 +3,6 @@ import 'package:education_app/app/utils/color/app_colors.dart';
 import 'package:education_app/app/utils/text/app_size.dart';
 import 'package:education_app/app/utils/text/app_text_bn.dart';
 import 'package:education_app/app/utils/text/app_text_styles.dart';
-import 'package:education_app/features/ui/common/widget/Custom_container.dart';
 import 'package:education_app/features/ui/common/widget/custom_appbar.dart';
 import 'package:education_app/features/ui/common/widget/custom_divider.dart';
 import 'package:education_app/features/ui/common/widget/custom_text.dart';
@@ -40,7 +39,9 @@ class _MainScreenState extends State<MainScreen> {
                 textStyle: AppTextStyle.headerTextStyle(context,textColor: AppColors.blue),
               ),
               gap,
+              /// read doc container
               _buildDocContainer(),
+              /// choose your option
               _buildOptionItem(gap, context),
             ],
           ),
@@ -83,7 +84,7 @@ class _MainScreenState extends State<MainScreen> {
                   textStyle: AppTextStyle.headerTextStyle(context,textColor: AppColors.blue),
                 ),
                 SizedBox(height: AppSizes.spaceBthItems(context),),
-                DividerWidget(),
+                CustomDivider(),
                 gap,
                 OptionContainer(boarderColor: AppColors.orange,
                   imageUrl:  AssetImagePath.dartIcon,

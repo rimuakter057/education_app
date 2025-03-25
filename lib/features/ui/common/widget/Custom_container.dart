@@ -14,6 +14,7 @@ class CustomContainer extends StatelessWidget {
   final Color? borderColor;
   final Gradient? gradient;
   final List<BoxShadow>? boxShadow;
+
   /// Individual corner radius
   final double? bottomLeft;
   final double? bottomRight;
@@ -35,7 +36,8 @@ class CustomContainer extends StatelessWidget {
     this.bottomLeft,
     this.bottomRight,
     this.topLeft,
-    this.topRight, this.boxShadow,
+    this.topRight,
+    this.boxShadow,
   });
 
   @override
@@ -52,7 +54,7 @@ class CustomContainer extends StatelessWidget {
           width: borderWidth ?? 0,
         ),
         borderRadius: _getBorderRadius(),
-        color: containerColor??AppColors.white,
+        color: containerColor ?? AppColors.white,
         boxShadow: _getDefaultBoxShadow(),
       ),
       child: child,
@@ -62,13 +64,14 @@ class CustomContainer extends StatelessWidget {
   /// boarder radius function
 
   BorderRadiusGeometry _getBorderRadius() {
-
     if (borderRadius != null) {
       return borderRadius!;
     }
 
-
-    if (bottomLeft != null || bottomRight != null || topLeft != null || topRight != null) {
+    if (bottomLeft != null ||
+        bottomRight != null ||
+        topLeft != null ||
+        topRight != null) {
       return BorderRadius.only(
         bottomLeft: Radius.circular(bottomLeft ?? 0),
         bottomRight: Radius.circular(bottomRight ?? 0),
@@ -77,11 +80,8 @@ class CustomContainer extends StatelessWidget {
       );
     }
 
-
     return BorderRadius.zero;
   }
-
-
 
   /// Default BoxShadow
   List<BoxShadow> _getDefaultBoxShadow() {
@@ -93,12 +93,4 @@ class CustomContainer extends StatelessWidget {
       ),
     ];
   }
-
 }
-
-
-
-
-
-
-

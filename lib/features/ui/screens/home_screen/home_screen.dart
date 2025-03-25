@@ -1,11 +1,14 @@
-
-
 import 'package:education_app/app/utils/asset_path.dart';
 import 'package:education_app/app/utils/color/app_colors.dart';
+import 'package:education_app/app/utils/color/gradient_color.dart';
 import 'package:education_app/app/utils/text/app_size.dart';
 import 'package:education_app/app/utils/text/app_text_styles.dart';
-import 'package:education_app/features/ui/common/widget/custom_listtile.dart';
+import 'package:education_app/features/ui/common/widget/custom_divider.dart';
+import 'package:education_app/features/ui/common/widget/custom_icon.dart';
+import 'package:education_app/features/ui/common/widget/custom_list_tile.dart';
 import 'package:education_app/features/ui/common/widget/custom_text.dart';
+import 'package:education_app/features/ui/screens/home_screen/widget/class_card_expansion.dart';
+import 'package:education_app/features/ui/screens/home_screen/widget/select_activity_container.dart';
 import 'package:education_app/features/ui/screens/home_screen/widget/small_container.dart';
 import 'package:flutter/material.dart';
 
@@ -17,30 +20,107 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  int selectedIndex = 0; // Default selected container
-  bool isDropdownOpen1 = false; // Dropdown for Card 1
-  bool isDropdownOpen2 = false; // Dropdown for Card 2
-
-
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
         child: Padding(
           padding: EdgeInsets.all(AppSizes.defaultPadding(context)),
-          child: Column(crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            SizedBox(height: 100,),
-            _buildRowContainer(context),
-            CustomListTile(
-             leading: CircleAvatar(radius: 30,
-             backgroundImage: AssetImage(AssetImagePath.dartIcon),
-             ),
-              title: "Rimu Akter",
-              subtitle: Text("I am a student"),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              SizedBox(height: 100),
+
+              ///first row container
+              _buildRowContainer(context),
+
+              ///your introduction tile
+              _buildIdentity(),
+
+              /// selected activity Row Container
+              _buildSelectActivity(context),
+             SizedBox(height: AppSizes.smallHSpace(context),),
+             CustomDivider(color: AppColors.black,),
+              /// show class section
+              CardExpansion(),
+              CardExpansion(
+                titleText: "Advance Dart",
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  ///your introduction tile
+  CustomListTile _buildIdentity() {
+    return CustomListTile(
+      leading: CircleAvatar(
+        radius: 30,
+        backgroundImage: AssetImage(AssetImagePath.dartIcon),
+      ),
+      title: "Rimu Akter",
+      subtitle: Text("I am a student"),
+    );
+  }
+
+  /// selected activity Row Container
+  Row _buildSelectActivity(BuildContext context) {
+    return Row(
+      children: [
+        SelectedAcvContainer(),
+        SelectedAcvContainer(
+        text: "details",
+        ),
+      ],
+    );
+  }
+
+  /// build first row container
+  Row _buildRowContainer(BuildContext context) {
+    return Row(
+      children: [
+        Expanded(
+          child: SmallContainer(
+            text: 'Beginner Friendly',
+            containerColor: AppColors.amberShade,
+            borderRadius: BorderRadius.circular(
+              AppSizes.borderRadiusLg(context),
             ),
-            /*Column(
+          ),
+        ),
+        SizedBox(width: AppSizes.spaceWTwoItems(context)),
+        Flexible(
+          child: SmallContainer(
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                CustomIcon(
+                  icon: Icons.alarm,
+                  iconColor: Colors.black,
+                  iconSize: AppSizes.iconSm(context),
+                ),
+
+                Flexible(
+                  child: CustomText(
+                    text: "6h 13min",
+                    textStyle: AppTextStyle.textStyleSm(context),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+
+        SizedBox(width: AppSizes.sideSpace(context)),
+      ],
+    );
+  }
+
+  /*Column(
               children: [
                 // Row with two containers for selection
                 Row(
@@ -140,37 +220,9 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ],
             ),*/
-          ],
-          ),
-        ),
-      )
-    );
-  }
-///first row container
-  Row _buildRowContainer(BuildContext context) {
-    return Row(children: [
-            Expanded(
-              child: SmallContainer(text: 'Beginner Friendly',
-              containerColor: AppColors.amberShade,
-                borderRadius: BorderRadius.circular(AppSizes.borderRadiusLg(context)),
-              ),
-            ),
-            SizedBox(width:AppSizes.spaceWTwoItems(context) ,),
-            Expanded(
-              child: SmallContainer(
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                Icon(Icons.alarm,color: AppColors.black,size: AppSizes.iconSm(context),),
-                CustomText(text: "6h 13min",textStyle: AppTextStyle.textStyleSm(context),),
-              ],),
-                   ),
-            ),
-          ],);
-  }
 
-/*  // Card with dropdown icon
+  /*
+  // Card with dropdown icon
   Widget buildCardWithDropdown(
       String title, bool isDropdownOpen, Function toggleDropdown) {
     return Card(
@@ -244,15 +296,10 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
     );
   }*/
-
-
-
-
-
-
-
-
-
 }
+
+
+
+
 
 

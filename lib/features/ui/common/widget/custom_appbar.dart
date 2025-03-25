@@ -1,23 +1,22 @@
-
-import 'package:education_app/app/utils/color/app_colors.dart';
 import 'package:education_app/app/utils/color/gradient_color.dart';
-import 'package:education_app/app/utils/text/app_size.dart';
 import 'package:education_app/app/utils/text/app_text_styles.dart';
 import 'package:flutter/material.dart';
 
+import 'custom_icon.dart';
 import 'custom_text.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String title;
   final Widget? leading;
   final Gradient? gradient;
-  final IconData?icon;
+  final IconData? icon;
 
   const CustomAppBar({
     super.key,
     required this.title,
     this.leading,
-     this.gradient, this.icon,
+    this.gradient,
+    this.icon,
   });
 
   @override
@@ -28,21 +27,15 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       toolbarHeight: kToolbarHeight + 30,
       leading: leading,
       title: CustomText(
-       text: title,
+        text: title,
         textStyle: AppTextStyle.appbarTextStyle(context),
       ),
-      actions:
-          [
-            IconButton(
-              icon: Icon(icon??Icons.search, color: AppColors.white,size: AppSizes.iconMd(context),),
-              onPressed: () {
-                // Handle search action
-              },
-            ),
-          ],
+      actions: [CustomIcon(icon: icon)],
       flexibleSpace: Container(
         decoration: BoxDecoration(
-          gradient: gradient??AppGradients.primaryGradient, // Gradient color for AppBar
+          gradient:
+              gradient ??
+              AppGradients.primaryGradient, // Gradient color for AppBar
         ),
       ),
     );

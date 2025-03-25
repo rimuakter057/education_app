@@ -49,6 +49,7 @@ class MyDrawer extends StatelessWidget {
         padding: EdgeInsets.zero,
         itemCount: drawerItems.length,
         itemBuilder: (context, index) {
+          /// drawer item custom list tile implement
           return DrawerItem(index: index,);
         },
       ),

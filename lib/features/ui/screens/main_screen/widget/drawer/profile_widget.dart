@@ -4,6 +4,7 @@ import 'package:education_app/app/utils/text/app_size.dart';
 import 'package:education_app/features/ui/common/widget/custom_text.dart';
 import 'package:flutter/material.dart';
 
+/// drawer header section profile widget
 class ProfileWidget extends StatelessWidget {
   const ProfileWidget({super.key});
 

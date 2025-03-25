@@ -4,6 +4,7 @@ import 'package:education_app/app/utils/color/app_colors.dart';
 import 'package:education_app/app/utils/text/app_text_bn.dart';
 import 'package:flutter/material.dart';
 
+/// drawer item list
 final List<Map<String, dynamic>> drawerItems = [
   {
     'icon': Icons.home,
