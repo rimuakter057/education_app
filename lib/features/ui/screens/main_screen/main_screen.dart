@@ -10,6 +10,7 @@ import 'package:education_app/features/ui/screens/main_screen/widget/body/doc_co
 import 'package:education_app/features/ui/screens/main_screen/widget/body/option_container.dart';
 import 'package:education_app/features/ui/screens/main_screen/widget/drawer/my_drawer.dart';
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
@@ -19,6 +20,23 @@ class MainScreen extends StatefulWidget {
 }
 
 class _MainScreenState extends State<MainScreen> {
+
+
+ Future<void> _launchDartDocs()async{
+   final Uri url =Uri.parse("https://dart.dev/docs");
+   if(!await launchUrl(url)){
+     throw Exception("Could not launch $url");
+   }
+   print("dart");
+ }
+
+  Future<void> _launchFlutterDocs() async {
+    final Uri url = Uri.parse('https://docs.flutter.dev/');
+    if (!await launchUrl(url)) {
+      throw Exception('Could not launch $url');
+    }
+    print("flutter");
+  }
   @override
   Widget build(BuildContext context) {
     Widget gap = SizedBox(height: AppSizes.spaceBthSections(context));
@@ -143,16 +161,24 @@ class _MainScreenState extends State<MainScreen> {
   Row _buildDocContainer() {
     return Row(
       children: [
-        DocContainer(
-          imageUrl: AssetImagePath.flutterIcon,
-          titleText: AppTextBn.flutter,
-          subtitleText: AppTextBn.documentation,
+        GestureDetector(
+          onTap: _launchFlutterDocs,
+          child: DocContainer(
+            imageUrl: AssetImagePath.flutterIcon,
+            titleText: AppTextBn.flutter,
+            subtitleText: AppTextBn.documentation,
+          ),
         ),
         SizedBox(width: 8),
-        DocContainer(
-          imageUrl: AssetImagePath.dartIcon,
-          titleText: AppTextBn.dart,
-          subtitleText: AppTextBn.documentation,
+        GestureDetector(
+          onTap :_launchDartDocs,
+
+
+          child: DocContainer(
+            imageUrl: AssetImagePath.dartIcon,
+            titleText: AppTextBn.dart,
+            subtitleText: AppTextBn.documentation,
+          ),
         ),
       ],
     );

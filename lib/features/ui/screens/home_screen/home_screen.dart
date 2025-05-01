@@ -144,7 +144,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ),
         SizedBox(width: AppSizes.spaceWTwoItems(context)),
-        Flexible(
+        Expanded(
           child: SmallContainer(
             child: Row(
               mainAxisSize: MainAxisSize.min,
